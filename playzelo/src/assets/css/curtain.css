@@ -1,0 +1,162 @@
+
+  :root{
+    --velvet:#7a001a;      /* deep maroon velvet */
+    --velvet2:#9c1730;
+    --shadow:rgba(0,0,0,.45);
+    --gold:#d4af37;
+    --bg:#0b0f17;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:#10141e;
+    color:#fff;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* ===== Curtain Overlay ===== */
+  .curtain-overlay{
+    position:fixed; inset:0;
+    z-index:9999;
+    background: radial-gradient(1200px 500px at 50% -100px, #1b2030 0%, #0b0f17 55%, #06080d 100%);
+    display:flex; align-items:stretch; justify-content:center;
+    overflow:hidden;
+  }
+  /* stage floor glow */
+  .curtain-overlay::after{
+    content:"";
+    position:absolute; left:50%; bottom:-15%;
+    transform:translateX(-50%);
+    width:140vw; height:70vh; border-radius:50%;
+    background: radial-gradient(closest-side, rgba(255,255,255,.08), transparent 70%);
+    filter: blur(30px);
+    pointer-events:none;
+  }
+
+  .stage-top-banner{
+    position:absolute; top:0; left:0; right:0; height:90px;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,.7), transparent),
+      repeating-linear-gradient(90deg, transparent 0 18px, rgba(255,255,255,.05) 18px 19px),
+      linear-gradient(180deg, #1a1f2c, #0f1420);
+    border-bottom:2px solid rgba(255,255,255,.07);
+    display:flex; align-items:center; justify-content:center;
+    z-index:3;
+  }
+  .stage-title{
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-weight:800;
+    font-size:14px;
+    color:#e9d8a6;
+    text-shadow:0 1px 0 #000, 0 0 20px rgba(212,175,55,.25);
+  }
+
+  .curtain{
+    flex:1 1 50%;
+    position:relative;
+    z-index:2;
+    box-shadow: inset 0 0 60px rgba(0,0,0,.6);
+    transform-origin: top center;
+    /* velvet folds */
+    background:
+      repeating-linear-gradient(90deg,
+        rgba(0,0,0,.25) 0px, rgba(0,0,0,.25) 6px,
+        rgba(0,0,0,0) 6px, rgba(0,0,0,0) 22px),
+      radial-gradient(120% 120% at 50% -20%, var(--velvet2), var(--velvet));
+    /* subtle texture */
+    filter: saturate(1.1) contrast(1.05);
+  }
+
+  .curtain.left{ border-right:1px solid rgba(0,0,0,.35); }
+  .curtain.right{ border-left:1px solid rgba(0,0,0,.35); }
+
+  /* gold edge piping */
+  .curtain::before{
+    content:"";
+    position:absolute; top:0; bottom:0; width:6px;
+    background: linear-gradient(180deg, #bb9c2a, #f3d46a 40%, #bb9c2a);
+    box-shadow:0 0 8px rgba(255,215,0,.25);
+  }
+  .curtain.left::before{ right:-3px; }
+  .curtain.right::before{ left:-3px; }
+
+  /* bottom fringe */
+  .fringe{
+    position:absolute; left:0; right:0; bottom:-18px; height:18px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,0)),
+      repeating-linear-gradient(90deg, var(--gold) 0 8px, #c9a63a 8px 16px);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 95% 100%, 90% 60%, 85% 100%, 80% 60%, 75% 100%, 70% 60%, 65% 100%, 60% 60%, 55% 100%, 50% 60%, 45% 100%, 40% 60%, 35% 100%, 30% 60%, 25% 100%, 20% 60%, 15% 100%, 10% 60%, 5% 100%, 0 60%);
+    box-shadow: 0 5px 10px var(--shadow);
+  }
+
+  /* gold rope tiebacks */
+  .rope{
+    position:absolute; top:38%;
+    width:180px; height:180px; border-radius:50%;
+    border:10px solid var(--gold);
+    box-shadow: inset 0 0 0 5px rgba(0,0,0,.15), 0 0 16px rgba(212,175,55,.25);
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.5));
+  }
+  .rope::after{
+    content:""; position:absolute; inset:8%;
+    border-radius:50%;
+    border:3px dashed rgba(0,0,0,.25);
+  }
+  .curtain.left .rope{ right:-90px; }
+  .curtain.right .rope{ left:-90px; }
+
+  /* sparkles for a casino vibe */
+  .sparkle{
+    position:absolute; inset:0; pointer-events:none; z-index:4;
+  }
+  .sparkle i{
+    position:absolute; width:2px; height:2px; background:rgba(255,255,255,.75);
+    border-radius:50%; opacity:0; transform:scale(0.5);
+    box-shadow:0 0 8px rgba(255,255,255,.8);
+    animation: twinkle 2.4s linear infinite;
+  }
+  @keyframes twinkle{
+    0%{opacity:0; transform:scale(.3)}
+    10%{opacity:.8; transform:scale(1)}
+    60%{opacity:.15; transform:scale(.6)}
+    100%{opacity:0; transform:scale(.3)}
+  }
+
+  /* Enter button (to satisfy user gesture for audio) */
+  .enter-wrap{
+    position:absolute; inset:auto 0 40px 0;
+    display:flex; justify-content:center; z-index:5;
+  }
+  .enter-btn{
+    appearance:none; border:0; cursor:pointer;
+    padding:14px 20px; border-radius:999px;
+    background: radial-gradient(100% 200% at 50% 0%, #ffe89a, #e3c152 40%, #a17c1f);
+    color:#2b2204; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45), inset 0 2px 0 rgba(255,255,255,.75);
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .enter-btn:hover{ transform:translateY(-2px); filter:brightness(1.05) }
+  .hint{
+    position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
+    font-size:12px; opacity:.7; letter-spacing:.03em;
+  }
+
+  /* ===== Game area (hidden until reveal) ===== */
+  #game{
+    min-height:100vh; display:none; /* shown after curtain opens */
+    padding:28px;
+    background:
+      radial-gradient(900px 300px at 50% -100px, rgba(255,255,255,.06), transparent 60%),
+      linear-gradient(180deg, #0b0f17, #131b2a);
+  }
+  .game-card{
+    max-width:1100px; margin:0 auto; border-radius:20px;
+    padding:24px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 40px rgba(255,255,255,.02);
+  }
