@@ -5,6 +5,7 @@ import game3 from "../../assets/images/game/03.jpg";
 import game4 from "../../assets/images/game/04.jpg";
 import bgImage from "../../assets/images/match/bg.jpg";
 import ComingSoonModal from "../ComingSoonModal/ComingSoon";
+import { Link } from "react-router-dom";
 
 const games = [
   { id: 1, img: game1, title: "Free Poker Games", category: "Slots", filter: "cat-1" },
@@ -64,12 +65,12 @@ const GameSection = () => {
             </div>
           ))}
         </div>
-
+          
         {/* Browse Button */}
         <div className="button-wrapper text-center mt-5">
-          <a href="game-list.html" className="default-button">
+          <Link to="/gamelist" className="default-button">
             <span>Browse All Matches <i className="icofont-circled-right"></i></span>
-          </a>
+          </Link>
         </div>
       </div>
 	  	<ComingSoonModal />

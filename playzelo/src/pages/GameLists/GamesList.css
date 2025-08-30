@@ -1,0 +1,347 @@
+/* ===== SECTION WRAPPER ===== */
+.game-section {
+  background: #060c2c; /* Dark background */
+  color: #fff;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== HEADER BANNER ===== */
+.header-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(90deg, #0a1a6e, #1a237e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header-banner h2 {
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  z-index: 2;
+}
+
+/* Glowing Blur Circles */
+.blur-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+}
+.blur-circle.blue {
+  width: 120px;
+  height: 120px;
+  top: 20px;
+  left: 60px;
+  background: #2196f3;
+}
+.blur-circle.purple {
+  width: 150px;
+  height: 150px;
+  bottom: 20px;
+  right: 60px;
+  background: #9c27b0;
+}
+
+/* Floating Dots */
+.dot {
+  position: absolute;
+  border-radius: 50%;
+}
+.dot.yellow {
+  width: 8px;
+  height: 8px;
+  background: yellow;
+  top: 30%;
+  left: 25%;
+  animation: ping 2s infinite;
+}
+.dot.pink {
+  width: 10px;
+  height: 10px;
+  background: #ff4081;
+  top: 60%;
+  right: 30%;
+  animation: bounce 2s infinite;
+}
+.dot.green {
+  width: 6px;
+  height: 6px;
+  background: #4caf50;
+  top: 50%;
+  left: 70%;
+  animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes ping {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ===== TABS ===== */
+.game-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.game-tabs button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px 22px;
+  margin: 5px 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+}
+
+.game-tabs button.active,
+.game-tabs button:hover {
+  color: #ff1744; /* Red highlight */
+}
+
+/* ===== GAME GRID ===== */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  width: 85%;
+  margin: 30px auto;
+}
+
+.game-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+}
+
+.game-card img {
+  width: 100%;
+  height: 280px; /* fixed size */
+  object-fit: cover;
+  display: block;
+}
+.game-card:hover img {
+  transform: scale(1.05);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.game-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.game-card:hover .overlay {
+  opacity: 1;
+}
+
+.game-card .overlay button {
+  background: #ff1744;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.game-card .overlay button:hover {
+  background: #e30030;
+}
+
+.game-card::after,
+.game-card::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 10px;
+  border-radius: 12px;
+  background: #1e2a78;
+  z-index: -1;
+}
+
+.game-card::after {
+  bottom: -6px;
+  opacity: 0.7;
+  filter: blur(4px);
+}
+
+.game-card::before {
+  bottom: -12px;
+  opacity: 0.4;
+  filter: blur(6px);
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 360px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #ff004d;
+  font-weight: bold;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* === Play Now Button === */
+.play-btn {
+  background: #fff;
+  color: #ff0066;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(255, 0, 100, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+  background: #ff0066;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(255, 0, 100, 0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .game-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .header-banner h2 {
+    font-size: 26px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .header-banner {
+    height: 220px;
+  }
+  .header-banner h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .game-card img {
+    height: 220px;
+  }
+}
+
+/* Small Mobiles */
+@media (max-width: 480px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .header-banner {
+    height: 180px;
+  }
+  .header-banner h2 {
+    font-size: 18px;
+  }
+  .game-card img {
+    height: 200px;
+  }
+}

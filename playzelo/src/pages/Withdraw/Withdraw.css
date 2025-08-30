@@ -1,0 +1,528 @@
+:root {
+  --pz-bg: #0f1724;
+  --pz-card: #0b1220;
+  --pz-accent: #ff7b00;
+  --pz-soft: rgba(255, 255, 255, 0.06);
+  --pz-white: #eaf2ff;
+  --pz-muted: rgba(234, 242, 255, 0.55);
+  --pz-radius: 14px;
+  --pz-glow: 0 6px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Page wrapper */
+.pz-page-wrapper-react {
+  font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #071028 0%, #071220 40%, #06111a 100%);
+  color: var(--pz-white);
+  padding: 40px 18px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Watermark */
+.pz-watermark-react {
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+.pz-watermark-react img {
+  width: 760px;
+  height: auto;
+  filter: grayscale(60%);
+}
+
+/* Main content */
+.pz-main-react {
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.pz-header-react {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+.pz-brand-react {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0b1220, #12233a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--pz-glow);
+}
+.pz-brand-react img {
+  width: 42px;
+  height: auto;
+}
+.pz-title-react h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.pz-title-react p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--pz-muted);
+}
+.pz-account-badge-react {
+  background: var(--pz-card);
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--pz-muted);
+}
+
+/* Grid */
+.pz-grid-react {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 22px;
+}
+
+/* Card */
+.pz-card-react {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--pz-radius);
+  padding: 20px;
+  box-shadow: var(--pz-glow);
+  border: 1px solid rgba(255,255,255,0.03);
+  margin-bottom: 16px;
+}
+
+/* Balance */
+.pz-balance-react {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  margin-bottom: 16px;
+}
+.pz-balance-react .amt {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Form */
+.pz-form-row-react {
+  margin-bottom: 14px;
+}
+.pz-input-react {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--pz-card);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--pz-white);
+  font-size: 14px;
+  outline: none;
+}
+.pz-input-react:focus {
+  border-color: rgba(255,123,0,0.22);
+  box-shadow: 0 0 0 4px rgba(255,123,0,0.06);
+}
+
+
+.pz-amount-row-react {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.pz-amount-btn-react {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px dashed rgba(255,255,255,0.04);
+  color: var(--pz-muted);
+  cursor: pointer;
+}
+.pz-amount-btn-react:hover {
+  color: var(--pz-white);
+  border-style: solid;
+}
+
+.pz-methods-list-react {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.pz-method-box-react {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #0f172a;
+  border: 2px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pz-method-box-react:hover {
+  background: #1e293b;
+}
+
+.pz-method-box-react.active {
+  border-color: #3b82f6;
+  background: #1c2439;
+}
+
+.pz-method-icon-react {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #60a5fa;
+}
+
+.pz-method-text-react .title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.pz-method-text-react .desc {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .pz-methods-list-react {
+    grid-template-columns: 1fr;
+  }
+}/* Form */
+.pz-form-row-react {
+  margin-bottom: 14px;
+}
+
+/* Input */
+.pz-input-react {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--pz-card);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--pz-white);
+  font-size: 14px;
+  outline: none;
+}
+.pz-input-react:focus {
+  border-color: rgba(255,123,0,0.22);
+  box-shadow: 0 0 0 4px rgba(255,123,0,0.06);
+}
+
+/* ✅ Input + Buttons Row */
+.pz-amount-row-react {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Input ko flex do taaki left side zyada space le */
+.pz-withdrawal-input-react {
+  flex: 1;
+}
+
+/* Buttons container */
+.pz-amounts-react {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.pz-amount-btn-react {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px dashed rgba(255,255,255,0.04);
+  color: var(--pz-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.25s;
+}
+.pz-amount-btn-react:hover {
+  color: var(--pz-white);
+  border-style: solid;
+}
+
+/* ✅ Responsive */
+@media (max-width: 600px) {
+  .pz-amount-row-react {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pz-amounts-react {
+    justify-content: space-between;
+  }
+  .pz-amounts-react button {
+    flex: 1;
+  }
+}
+
+
+/* Methods section */
+.pz-methods-react {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pz-method-react {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #141a2d;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.pz-method-react .icon {
+  font-size: 28px;
+  color: #60a5fa;
+}
+
+.pz-method-react.active {
+  border-color: #3b82f6;
+  background: #1c2338;
+}
+
+.pz-method-react:hover {
+  background: #1a2135;
+}
+
+/* Input fields */
+.pz-form-fields-react {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pz-input-react {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pz-input-react label {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.pz-input-react input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+}
+
+.pz-input-react input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .pz-methods-react {
+    flex-direction: column;
+  }
+}
+
+
+/* Summary */
+.pz-summary-react {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--pz-white);
+}
+
+/* Sidebar */
+.pz-sidebar-react {
+  display: flex;
+  flex-direction: column;
+}
+.quick-actions {
+  background: #0c1222;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.qa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.qa-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.qa-header .status {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.qa-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.qa-item:last-child {
+  border-bottom: none;
+}
+
+.qa-label {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.qa-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.qa-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ✅ Responsive */
+@media (max-width: 600px) {
+  .qa-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .qa-btn {
+    align-self: flex-end;
+  }
+}
+
+
+/* Table */
+.pz-table-react {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.pz-table-react thead th {
+  text-align: left;
+  padding: 10px 8px;
+  color: var(--pz-muted);
+  font-weight: 600;
+}
+.pz-table-react tbody td {
+  padding: 10px 8px;
+  border-top: 1px solid rgba(255,255,255,0.02);
+  color: var(--pz-white);
+}
+.pz-status-react {
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.pz-status-react.pending {
+  background: rgba(255,200,30,0.12);
+  color: #ffc95e;
+}
+.pz-status-react.done {
+  background: rgba(56,199,149,0.12);
+  color: #38c795;
+}
+.pz-status-react.rej {
+  background: rgba(255,80,100,0.08);
+  color: #ff5064;
+}
+
+/* Buttons */
+.pz-cta-react {
+  background: linear-gradient(90deg, var(--pz-accent), #ff9b3a);
+  border: none;
+  color: #06111a;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.pz-ghost-react {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--pz-white);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Toast */
+.pz-toast-react {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  background: linear-gradient(180deg,#0b1220,#071428);
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: var(--pz-glow);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .pz-grid-react {
+    grid-template-columns: 1fr;
+  }
+  .pz-watermark-react img {
+    width: 520px;
+  }
+}
+@media (max-width: 420px) {
+  .pz-watermark-react img {
+    width: 360px;
+  }
+}

@@ -1,0 +1,31 @@
+/* Hide default cursor */
+body_.cursor-follower-enabled_ {
+  cursor: none;
+}
+ 
+/* Red dot */
+_.cursor-dot_ {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #E52020;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+ 
+/* Game icon that follows behind */
+_.cursor-icon-trail_ {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.1s linear;
+}

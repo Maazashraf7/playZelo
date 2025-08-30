@@ -1,0 +1,16 @@
+_.money-note_ {
+  font-size: 24px;
+  user-select: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: -30px;
+}
+ 
+@keyframes _fall_ {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

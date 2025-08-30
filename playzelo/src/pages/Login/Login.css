@@ -1,0 +1,63 @@
+@layer components {
+  .default-button {
+    position: relative;
+  }
+ 
+  .default-button::before,
+  .default-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    border-radius: 0.5rem; /* same as Tailwind rounded-lg */
+    transition: transform 0.3s cubic-bezier(0.79,0.14,0.15,0.86), background-color 0.3s cubic-bezier(0.79,0.14,0.15,0.86);
+  }
+ 
+  .default-button::before {
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  }
+ 
+  .default-button::after {
+    background-color: #ff0052;
+    transform: translate(4px, 4px);
+    z-index: 0;
+  }
+ 
+  .default-button:hover {
+    transform: translate(4px, 4px);
+    color: #fff;
+  }
+ 
+  .default-button:hover::before {
+    background-color: #ff0052;
+  }
+ 
+  .default-button:hover::after {
+    background-color: #fff;
+    transform: translate(-4px, -4px);
+  }
+ 
+  /* Reverse effect */
+  .default-button.reverse-effect {
+    color: #fff;
+  }
+  .default-button.reverse-effect::before {
+    background-color: #ff0052;
+  }
+  .default-button.reverse-effect::after {
+    background-color: #fff;
+  }
+  .default-button.reverse-effect:hover {
+    color: #ff0052;
+  }
+  .default-button.reverse-effect:hover::before {
+    background-color: #fff;
+  }
+  .default-button.reverse-effect:hover::after {
+    background-color: #ff0052;
+  }
+}

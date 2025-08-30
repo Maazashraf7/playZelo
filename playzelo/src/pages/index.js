@@ -1,4 +1,6 @@
-// export { default as Login } from './Login/Login.jsx'
+// export { default as LoginForm } from './Login/Login.jsx'
 // export { default as Signup } from './Signup/Signup.jsx'
-// export { default as Final } from './Final/Final.jsx'
+// export { default as GameList } from './GameLists/GamesList.jsx'
+// export { default as WithdrawalPage } from './Withdraw/Withdraw.jsx'
+// export { default as Home } from './Home/Home.jsx'
 // export { default as Teenpatti } from './Teenpatti/Teenpatti.jsx'

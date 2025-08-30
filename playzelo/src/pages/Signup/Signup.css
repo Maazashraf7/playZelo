@@ -1,0 +1,177 @@
+
+/* Container styling */
+.login-section {
+  background: linear-gradient(to bottom, #0f1c47, #1e295d);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+ 
+/* Inner box */
+.account-wrapper {
+  background-color: #141c4c;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+ 
+/* Form title */
+.account-wrapper .title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 700;
+}
+ 
+/* Label and input styling */
+.account-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #f5efef;
+}
+ 
+.account-form input,
+.account-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #202b5c;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 14px;
+  outline: none;
+}
+
+
+
+/* Make placeholder text black */
+.account-form input::placeholder {
+  color: black !important;
+  opacity: 1; /* ensures it's fully visible */
+}
+
+
+
+/* Phone + country code */
+.number-group {
+  display: flex;
+  gap: 10px;
+ 
+  align-items: center;
+}
+
+.number-group select {
+  width: 30%;
+  background-color: white;
+  color: black;
+}
+
+.number-group input {
+  width: 70%;
+   height: 54px;
+}
+ 
+/* DOB selects */
+.birth-select {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.birth-select select {
+  flex: 1;
+  background-color: rgb(254, 254, 253);
+  color: black;
+}
+ 
+/* Country and city */
+.country select,
+.form-group input {
+  width: 100%;
+  color: rgb(48, 47, 47);
+  background-color: rgb(254, 254, 253);
+}
+ 
+/* Button */
+.default-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #ff2e63, #ff6e7f);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+ 
+.default-button:hover {
+  background: linear-gradient(to right, #e52e4d, #f7647e);
+  transform: scale(1.02);
+}
+ 
+/* Bottom link */
+.account-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #e6e3e3;
+}
+ 
+.account-bottom a {
+  color: #ff2e63;
+  text-decoration: none;
+}
+ 
+.account-bottom a:hover {
+  text-decoration: underline;
+}
+ 
+/* Responsive for mobile (phones) */
+@media (max-width: 576px) {
+  .number-group,
+  .birth-select {
+    flex-direction: column;
+  }
+ 
+  .number-group select,
+  .number-group input,
+  .birth-select select {
+    width: 100%;
+  }
+ 
+  .account-wrapper {
+    padding: 30px 20px;
+  }
+ 
+  .default-button {
+    font-size: 15px;
+    padding: 12px;
+  }
+ .account-wrapper.title {
+    font-size: 20px;
+  }
+}
+ 
+/* Responsive for tablets */
+@media (max-width: 768px) {
+  .account-wrapper {
+    padding: 35px 25px;
+  }
+}
+ 
+/* Mid-size screens */
+@media (max-width: 992px) {
+  .account-wrapper {
+    width: 90%;
+  }
+}

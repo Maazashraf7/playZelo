@@ -1,12 +1,10 @@
-// src/App.jsx
-import React from 'react';
-import AppRoutes from './routes';
+import React from "react";
+import MainRoutes from "./routes/router/MainRoutes";
 
 function App() {
   return (
-    <div className="App">
-      <AppRoutes />
-    </div>
+  
+      <MainRoutes/>
   );
 }
 
