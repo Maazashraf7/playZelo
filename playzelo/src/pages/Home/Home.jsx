@@ -15,7 +15,7 @@ import CasinoShowcase from "../../components/header/CasinoShowcase";
 import FloatingZoomCards from "../../components/header/FloatingZoomCards";
 
 import videos from "../../assets/audio/135618-762107386.mp4"
-// const Home = ({ isLoggedIn = false }) => {
+
 //   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 //   const [walletBalance, setWalletBalance] = useState("0.00");
 //   const [profilePic, setProfilePic] = useState(null);
