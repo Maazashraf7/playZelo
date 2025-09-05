@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teen Patti Lobby</title>
+<link rel="stylesheet" href="../Design.CSS/Lobby.css">
+
+  <!-- Lottie Web -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js"></script>
+</head>
+<body>
+ <div class="lobby-container">
+  <!-- Logo -->
+  <img src="/TeenpattiWeb/Images/teenpattilogoo2.png" alt="Game Logo" class="logo">
+</div>
+
+    <!-- Lottie Animation -->
+    <div id="lottie-celebration" class="lottie-animation"></div>
+
+    <!-- Daily Bonus Dialog -->
+    <div id="lobby-dialog" class="lobby-dialog">
+      <h2>Daily Bonus</h2>
+      <img src="/TeenpattiWeb/Images/newlobby1.png" alt="Bonus Image">
+      <button onclick="closeDialog()">Close</button>
+    </div>
+<!-- Shimmer Button -->
+<button class="shimmer-btn" onclick="goToEntryPayment()">Entry Lobby</button>
+
+<script>
+  function goToEntryPayment() {
+    window.location.href = "entrypayment.html"; // ✅ Redirect karega naye page par
+  }
+</script>
+
+
+  <script>
+    // Lottie Animation
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-celebration'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/animations/celebrationsbegin.json' // Replace with your JSON
+    });
+
+    // Dialog Logic
+    const dialog = document.getElementById('lobby-dialog');
+    function closeDialog() {
+      dialog.style.display = 'none';
+    }
+
+    // Shimmer Button click
+    function goToEntryLobby() {
+      window.location.href = "entrylobby.html"; // Replace with your target page
+    }
+  </script>
+</body>
+</html>

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import LotteryPage from "./LotteryPage";
-
+import Lotteries from "./LotteryLanding";
+// import LotteryPage from "./LotteryPage";
+// import LotteryLayout from "./LotteryLayouts";
 
 export default function CurtainIntro() {
   const overlayRef = useRef(null);
@@ -264,7 +265,7 @@ export default function CurtainIntro() {
         </div>
       </div>
 
-      <LotteryPage />
+      <Lotteries />
 
       {/* <section id="game" ref={gameRef}>
         <div className="game-card">

@@ -1,116 +1,90 @@
 import React from 'react';
-
-// You will need to replace these with your actual image paths
-import paymentImage from '../../assets/images/jaqport/04.jpg';
-import greatSolutionsImage from '../../assets/images/jaqport/05.jpg';
-import supportInPersonImage1 from '../../assets/images/jaqport/06.jpg';
-import supportInPersonImage2 from '../../assets/images/jaqport/07.jpg';
-
-// Card Component nested inside GamingSection
-const Card = ({ title, description, image, altText }) => {
+ 
+const data = [
+  {
+    title: 'PAYMENT LIMITATION',
+    img: '/images/04.png',
+    desc: 'Holisticly underwhe fully researched deliverables for revolutionary sourcess skills and technically sound',
+  },
+  {
+    title: 'GREAT SOLUTIONS',
+    img: '/images/05.png',
+    desc: 'Holisticly underwhe fully researched deliverables for revolutionary sourcess skills and technically sound',
+  },
+  {
+    title: 'SUPPORT IN PERSON',
+    img: '/images/06.png',
+    desc: 'Holisticly underwhe fully researched deliverables for revolutionary sourcess skills and technically sound',
+  },
+  {
+    title: 'SUPPORT IN PERSON',
+    img: '/images/07.png',
+    desc: 'Holisticly underwhe fully researched deliverables for revolutionary sourcess skills and technically sound',
+  },
+];
+ 
+export default function CasinoFeatures() {
   return (
-    <div className="w-full">
-      <div className="bg-[#10143a] p-8 rounded-[20px] text-center text-white game__item item-layer">
-        <div className="flex justify-center items-center mb-6">
-          <img src={image} alt={altText} className="max-h-[150px] w-auto" />
-        </div>
-        <div className="px-4">
-          <h4 className="text-xl font-bold mb-2">
-            <a href="#">{title}</a>
-          </h4>
-          <p className="text-gray-400">
-            {description}
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-bl from-[#10052C] to-[#39184B] flex flex-col items-center justify-center py-8">
+      <div className="text-center mb-16 text-white">
+        <h2
+          className="text-4xl font-bold mb-4"
+          style={{
+            textShadow: '0 0 10px #089dff, 0 0 20px #089dff',
+          }}
+        >
+          BE IN CONTROL
+        </h2>
+        <p className="text-gray-400 max-w-2xl mx-auto">
+          At Modeltheme, we show only the best websites and portfolios built completely with passion,
+          simplicity and creativity!
+        </p>
+      </div>
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        {data.map((item, idx) => (
+          <div key={idx} className="relative group">
+            {/* Layered white shadows */}
+            <div
+              className="absolute inset-0 rounded-md pointer-events-none"
+              style={{
+                zIndex: 0,
+                top: '26px',
+                left: '26px',
+                right: '-26px',
+                bottom: '-26px',
+                boxShadow: '0 24px 64px 0 rgba(255,255,255,0.13)',
+                transition: 'box-shadow 0.2s',
+              }}
+            />
+            <div
+              className="absolute inset-0 rounded-md pointer-events-none"
+              style={{
+                zIndex: 0,
+                top: '13px',
+                left: '13px',
+                right: '-13px',
+                bottom: '-13px',
+                boxShadow: '0 12px 32px 0 rgba(255,255,255,0.18)',
+                transition: 'box-shadow 0.2s',
+              }}
+            />
+            {/* Main Card */}
+            <div className="relative bg-[#262C53] rounded-md flex items-center shadow-lg px-6 py-8 z-10 transition-all duration-200 group-hover:shadow-2xl group-hover:scale-[1.03]">
+              <div className="flex-shrink-0 mr-6">
+                <img src={item.img} alt="" className="w-48 h-48 object-contain" />
+              </div>
+              <div>
+                <h2 className="text-white text-2xl font-bold mb-3">
+                  {item.title}
+                </h2>
+                <p className="text-white text-lg leading-relaxed opacity-90">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
-};
-
-const GamingSection = () => {
-  const cardData = [
-    {
-      title: 'PAYMENT LIMITATION',
-      description: 'Holisticly underwhe fully researched deliverables for revoluonary sourcess skills and technically sound',
-      image: paymentImage,
-      altText: 'Casino roulette wheel'
-    },
-    {
-      title: 'GREAT SOLUTIONS',
-      description: 'Holisticly underwhe fully researched deliverables for revoluonary sourcess skills and technically sound',
-      image: greatSolutionsImage,
-      altText: 'Slot machine'
-    },
-    {
-      title: 'SUPPORT IN PERSON',
-      description: 'Holisticly underwhe fully researched deliverables for revoluonary sourcess skills and technically sound',
-      image: supportInPersonImage1,
-      altText: 'Casino hand'
-    },
-    {
-      title: 'SUPPORT IN PERSON',
-      description: 'Holisticly underwhe fully researched deliverables for revoluonary sourcess skills and technically sound',
-      image: supportInPersonImage2,
-      altText: 'Support desk'
-    },
-  ];
-
-  return (
-    <>
-    <style>
-        {`
-        .game__item.item-layer {
-  position: relative;
-  z-index: 1;
 }
-
-.game__item.item-layer::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  padding: 3px;
-  background: linear-gradient(to right, #452445, #552763, #35339d, #272147);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
-}
-        `}
-    </style>
-     <section className="py-24" style={{ background: '#0b0f2a' }}>
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16 text-white">
-          <h2 className="text-4xl font-bold mb-4" style={{ textShadow: '0 0 10px #089dff, 0 0 20px #089dff' }}>
-            BE IN CONTROL
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            At Modeltheme, we show only the best websites and portfolios built completely with passion,
-            simplicity and creativity!
-          </p>
-        </div>
-
-        {/* Card Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 justify-items-center">
-          {cardData.map((card, index) => (
-            <Card
-              key={index}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              altText={card.altText}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    </>
-   
-  );
-};
-
-export default GamingSection;

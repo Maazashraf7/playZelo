@@ -159,7 +159,7 @@ export default function CasinoPage() {
           />
         ))}
       </main>
-      <div className="mt-15 ">
+      <div className="mt-20 ">
         <CasinoButton>BROWSE ALL MATCHES</CasinoButton>
       </div>
     </div>

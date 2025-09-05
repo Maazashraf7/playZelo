@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  background: #001743;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.splash-container {
+  text-align: center;
+  color: white;
+}
+
+.logo {
+  width: 200px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.lottie {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+}
+
+#welcome-text {
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0.3;
+  transition: all 2s ease-in-out;
+}

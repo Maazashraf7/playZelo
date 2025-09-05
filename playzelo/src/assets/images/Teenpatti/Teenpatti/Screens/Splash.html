@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teen Patti Splash</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #001743;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 300px;
+      border-radius: 16px;
+    }
+
+    .spacer-24 { height: 24px; }
+    .spacer-35 { height: 35px; }
+    .spacer-40 { height: 40px; }
+
+    .welcome-text {
+      font-size: 25px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.3);
+      transform: scale(0.9);
+      transition: all 2s ease;
+    }
+
+    .welcome-text.show {
+      color: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img src="/Images/teenpattilogoo2.png" alt="Teen Patti Logo" class="logo">
+
+    <div class="spacer-24"></div>
+
+    <!-- Lottie Loader -->
+    <div id="lottie-loader" style="width:150px;height:150px;"></div>
+
+    <div class="spacer-40"></div>
+
+    <!-- Welcome Text -->
+    <h2 id="welcome" class="welcome-text">Welcome to Teen Patti</h2>
+
+    <div class="spacer-35"></div>
+
+    <!-- Second Lottie -->
+    <div id="lottie-loading" style="width:200px;height:200px;"></div>
+  </div>
+
+  <!-- Lottie CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"></script>
+
+  <script>
+    // ✅ Load first Lottie (loader.json)
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-loader'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'loader.json'   // <-- apna lottie JSON file ka path do
+    });
+
+    // ✅ Load second Lottie (aniloading.json)
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-loading'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'aniloading.json' // <-- apna lottie JSON file ka path do
+    });
+
+    // ✅ Animate Welcome Text
+    const welcomeText = document.getElementById('welcome');
+    setTimeout(() => {
+      welcomeText.classList.add("show");
+    }, 100); // small delay
+
+    // ✅ Navigate after 3s
+    setTimeout(() => {
+      window.location.href = "login.html"; // apna login page yaha rakho
+    }, 3000);
+  </script>
+</body>
+</html>

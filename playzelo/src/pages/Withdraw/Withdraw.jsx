@@ -174,7 +174,7 @@ const WithdrawalPage = () => {
             </div>
 
             {/* Methods */}
-            <div>
+            {/* <div>
               <label className="block text-sm">Payout Method</label>
               <div className="grid grid-cols-2 gap-3 mt-3">
                 {[
@@ -222,7 +222,7 @@ const WithdrawalPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Method specific */}
             <div className="flex flex-col gap-3 mt-4">

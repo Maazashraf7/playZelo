@@ -1,0 +1,113 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.lobby-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("/TeenpattiWeb/Images/1213.jpg");
+  background-repeat: repeat-x;   /* 👈 sirf left-right repeat hoga */
+  background-size: auto 100%;    /* height fix ho jayegi, width repeat hogi */
+  background-position: center top;
+  
+}
+
+.logo {
+  position: absolute;
+  top: 20px;     /* upar se gap */
+  left: 20px;    /* left se gap */
+  width: 180px;  /* logo ka size */
+  height: 160px;
+}
+
+
+/* Top Bar / Logo */
+.top-bar {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+}
+.top-logo {
+  width: 80px;
+  height: 80px;
+}
+
+/* Lottie Animation */
+.lottie-animation {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 380px;
+  z-index: 1;
+}
+.lottie-celebration{
+    width: 1000px;
+}
+/* Daily Bonus Dialog */
+.lobby-dialog {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 350px;
+  background-color: rgb(84, 9, 9);
+  border-radius: 19px;
+  padding: 16px;
+  text-align: center;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lobby-dialog h2 {
+  color: white;
+  font-family: cursive;
+  font-weight: bold;
+  margin: 0;
+}
+.lobby-dialog img {
+  width: 100%;
+  border-radius: 10px;
+  
+}
+.lobby-dialog button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Shimmer Button */
+.shimmer-btn {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 28px;
+  border-radius: 16px;
+  border: none;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: black;
+  background: linear-gradient(270deg, #E86692, #FFFF8D, #4DFD52);
+  background-size: 600% 600%;
+  animation: shimmer 1.5s linear infinite;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}

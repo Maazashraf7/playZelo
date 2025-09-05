@@ -11,7 +11,7 @@ const EntryLobby = () => {
 
   const joinNow = () => {
     closeSheet();
-    navigate("/gameroom");
+    navigate("/teenpatti/matching");
   };
 
   const tournamentData = [
@@ -36,7 +36,7 @@ const EntryLobby = () => {
       {/* ✅ Navbar */}
       <header className="bg-[#122b5c] text-black py-4 px-6 shadow-md w-full min-w-full">
         <div className="max-w-[1270px] w-full mx-auto">
-          <h1 className="text-lg font-bold">Playzelo Teenpatti</h1>
+          <h1 className="text-lg font-bold text-white">Playzelo Teenpatti</h1>
         </div>
       </header>
 
@@ -45,7 +45,7 @@ const EntryLobby = () => {
         <div className="flex items-center justify-between px-4 py-2 max-w-[1270px] w-full mx-auto">
           <div className="text-2xl cursor-pointer text-white">☰</div>
           <div className="flex gap-2">
-            <button className="px-3 py-1 rounded-md bg-[#1d3a7c] text-black text-sm font-medium">
+            <button className="px-3 py-1 rounded-md bg-[#1d3a7c] text-white text-sm font-medium">
               All
             </button>
             <button className="px-3 py-1 rounded-md bg-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-300">
